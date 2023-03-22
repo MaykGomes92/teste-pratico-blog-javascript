@@ -14,7 +14,7 @@ function Index({ idPost, setAbrirModal, abrirModal }) {
  React.useEffect(() => {
   if (idPost) {
    setPostSelecionado(listaPosts.filter(item => item.id === idPost))
-   
+
    const commentsPost = async () => {
     await axios.get(`https://jsonplaceholder.typicode.com/posts/${idPost}/comments`).then((response) => setCommentsPostSelecioando(response.data))
    }

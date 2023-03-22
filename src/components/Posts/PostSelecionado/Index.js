@@ -3,6 +3,7 @@ import './style.scss'
 import { UsersGlobalContext } from '../../../Hooks/ContextUsers';
 import imagePost from '../../../assets/background-tecnologia.jpg';
 import axios from 'axios';
+import {SlClose} from 'react-icons/sl'
 
 function Index({ idPost, setAbrirModal, abrirModal }) {
  const { listaApi, listaPosts } = useContext(UsersGlobalContext);
@@ -25,17 +26,17 @@ function Index({ idPost, setAbrirModal, abrirModal }) {
  if (idPost) {
   return (
    abrirModal && (
-    <div>
-     <h1 onClick={() => setAbrirModal(false)}>X</h1>
+    <div className='containerPost'>
+     <SlClose onClick={() => setAbrirModal(false)} className='closeModal'/>
      {postSelecionado && (
       postSelecionado.map((item) => (
-       <div key={item.id}>
+       <div key={item.id} className='contentPost'>
         <h1>{item.title}</h1>
         <p>{item.body}</p>
         <img src={imagePost} alt='Imagem do post do blog' />
         {commentsPostSelecionado && (
          commentsPostSelecionado.map((item) => (
-          <div>
+          <div className='containerComentarios'>
            <p>Name: {item.name} #{item.id}</p>
            <p>Email: {item.email}</p>
            <p>Comentário: {item.body}</p>

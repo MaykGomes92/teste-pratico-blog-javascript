@@ -1,0 +1,47 @@
+.sectionBackGround {
+ background: url(../../assets/background-tecnologia.jpg);
+ width: 100%;
+ height: 50vh;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: center;
+ .descriptionLeft {
+  display: flex;
+  flex-direction: column;
+  h1{
+   color: white;
+   font-size: 3rem;
+  }
+
+  button{
+   margin-top: 100px;
+   border-radius: 15px;
+   border: none;
+   background: linear-gradient(to bottom, #7B68EE, #8A2BE2);
+   filter: brightness(160%);
+   color: white;
+   font-size: 1.4rem;
+   padding: 10px 80px;
+   cursor: pointer;
+   transition: .5s;
+   &:hover{
+    filter: brightness(190%);
+  }
+  }
+
+ }
+
+ .descriptionRight {
+  h2{
+    margin-bottom: -40px;
+   font-size: 3rem;
+   width: 500px;
+   color: white;
+   line-height: 80px;
+  }
+ }
+}

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './style.scss'
-import PostSelecionado from './PostSelecionado/Index';
+import { Link } from 'react-router-dom'
+import PostSelecionado from './PostSelecionado';
 import imagePost from '../../assets/background-tecnologia.jpg'
 import { UsersGlobalContext } from '../../Hooks/ContextUsers';
 
@@ -43,22 +44,27 @@ function Index() {
   return (
     <section className='sectionPosts'>
       <h1>Posts</h1>
-      <PostSelecionado idPost={idPost} abrirModal={abrirModal} setAbrirModal={setAbrirModal} />
-      <ul onClick={() => setAbrirModal(true)}>
-        {listaProScroll && (
-          listaProScroll.map(item => (
-            <li key={item.id} onClick={() => handleIdPost(item.id)}>
-              <div>
-                <h1>{item.title}</h1>
-                <p>{item.body}</p>
-                <img src={imagePost} alt='Imagem do post' />
-                <button>Ver Mais</button>
-              </div>
-            </li>
-          ))
-        )}
-        <li id='sentinela' />
-      </ul>
+        <PostSelecionado idPost={idPost} abrirModal={abrirModal} setAbrirModal={setAbrirModal} />
+      <div className='teste'>
+        <ul onClick={() => setAbrirModal(true)}>
+          {listaProScroll && (
+            listaProScroll.map(item => (
+              <li key={item.id} onClick={() => handleIdPost(item.id)}>
+                <div>
+                  <h1>{item.title}</h1>
+                  <p>{item.body}</p>
+                  <img src={imagePost} alt='Imagem do post' />
+                  <button>Ver Mais</button>
+                </div>
+              </li>
+            ))
+          )}
+          <li id='sentinela' />
+        </ul>
+        <div className='usuariosList'>
+      <Link to='/usuario'>Usuarios</Link>
+        </div>
+      </div>
     </section>
   )
 }

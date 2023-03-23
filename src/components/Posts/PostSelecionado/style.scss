@@ -1,6 +1,6 @@
 .containerPost {
  position: fixed;
- z-index: 99;
+ z-index: 90;
  display: flex;
  justify-content: center;
  background-color: rgba(29, 45, 51, 0.363);
@@ -13,28 +13,38 @@
   height: 50px;
   border-radius: 50%;
   border: 3px solid rgba(0, 0, 0, 0.5);
-  margin-top: 30px;
   font-size: 2.4rem;
   cursor: pointer;
+  margin-top: 15px;
  }
- 
  .contentPost {
+  position: relative;
+  z-index: 99;
   border: 4px solid whitesmoke;
   box-shadow: 5px 15px 5px rgba(0, 0, 0, 0.5);
   margin-top: 80px;
-  padding: 10px 30px ;
+  padding: 10px 30px;
   max-width: 800px;
   width: 100%;
   height: 500px;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: black;
-  h1{
+
+  &::-webkit-scrollbar {
+   width: 5px;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+   border-radius: 15px;
+   background: whitesmoke;
+  }
+  background-color: rgb(26, 3, 3);
+  h1 {
    font-size: 2rem;
    color: white;
    margin-bottom: 15px;
   }
-  p{
+  p {
    color: white;
    margin-bottom: 15px;
   }
@@ -45,7 +55,7 @@
   .containerComentarios {
    margin-top: 25px;
    border-top: 1px solid whitesmoke;
-   p{
+   p {
     margin-top: 10px;
    }
   }

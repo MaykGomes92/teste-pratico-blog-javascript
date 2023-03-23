@@ -22,7 +22,7 @@ function Index() {
     <section className='containerUsuarios'>
       {listaUsuarios && (
         listaUsuarios.map((item) => (
-          <div className='infoUsuarios'>
+          <div className='infoUsuarios' key={item.id}>
             <Link to={`user/${item.id}`}>
             <img src={perfilUsuarioImage} alt='foto do usuario'/>
             <div className='perfilUsuario'>

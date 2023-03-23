@@ -1,0 +1,21 @@
+.containerUsuarios {
+ .infoUsuarios {
+  a {
+   display: flex;
+   text-decoration: none;
+   align-items: center;
+   img {
+    width: 50px;
+   }
+
+   .perfilUsuario {
+    margin-bottom: 30px;
+    h2 {
+     width: 100px;
+     color: rgb(95, 95, 95);
+     font-size: 0.9rem;
+    }
+   }
+  }
+ }
+}

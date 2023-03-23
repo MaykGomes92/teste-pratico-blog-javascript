@@ -1,28 +1,33 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import './style.scss'
 import { UsersGlobalContext } from '../../../Hooks/ContextUsers';
 import imagePost from '../../../assets/background-tecnologia.jpg';
-import axios from 'axios';
 import { SlClose } from 'react-icons/sl'
+import {POSTS,POST_COMMENTS} from '../../../API.js'
+
 
 function Index({ idPost, setAbrirModal, abrirModal }) {
-  const { listaApi, listaPosts } = useContext(UsersGlobalContext);
-  const [postSelecionado, setPostSelecionado] = React.useState(null)
+  const { listaApi } = React.useContext(UsersGlobalContext);
+  const [listaPosts, setListaPosts] = React.useState()
+
   const [commentsPostSelecionado, setCommentsPostSelecioando] = React.useState()
-
-
+  const [postSelecionado, setPostSelecionado] = React.useState()
 
   React.useEffect(() => {
-    if (idPost) {
+    const {url} = POSTS();
+    const urlPosts = POST_COMMENTS(idPost);
+    
+    let fetchApi = async () => {
+      await listaApi(url, setListaPosts)
+      await listaApi(urlPosts.url, setCommentsPostSelecioando)
+    }
+    fetchApi()
+    if (listaPosts) {
       setPostSelecionado(listaPosts.filter(item => item.id === idPost))
-
-      const commentsPost = async () => {
-        await axios.get(`https://jsonplaceholder.typicode.com/posts/${idPost}/comments`).then((response) => setCommentsPostSelecioando(response.data))
-      }
-      commentsPost()
     }
   }, [idPost])
+
 
   if (idPost) {
     return (
@@ -43,7 +48,6 @@ function Index({ idPost, setAbrirModal, abrirModal }) {
                 initial={{ opacity: 0, scale: 0.5, y: -1000 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-
               >
                 <h1>{item.title}</h1>
                 <p>{item.body}</p>

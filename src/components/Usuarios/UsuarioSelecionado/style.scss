@@ -1,0 +1,27 @@
+.containerInfoUsuario {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+ .blocoUmInfoUsuario {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid aqua;
+  padding: 10px;
+  img {
+   width: 200px;
+  }
+  .infoDoPerfil {
+   p + p {
+    margin-top: 10px;
+   }
+  }
+ }
+
+ .infoEndereco {
+ }
+}

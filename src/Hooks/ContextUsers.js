@@ -9,17 +9,14 @@ export const UsersGlobalContext = createContext();
 
 export function UsersGlobalContextProvider({ children }) {
 
- const [listaPosts, setListaPosts] = React.useState()
-
-
- async function listaApi(endPoint){
+ async function listaApi(endPoint,setState){
     await axios.get(baseUrl + endPoint).then((response) => {
-    setListaPosts(response.data)
+      setState(response.data)
   })
  }
 
  return (
-  <UsersGlobalContext.Provider value={{ listaApi, listaPosts }}>
+  <UsersGlobalContext.Provider value={{ listaApi }}>
    {children}
   </UsersGlobalContext.Provider>
  )

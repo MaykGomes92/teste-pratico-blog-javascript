@@ -36,3 +36,23 @@ header {
   }
  }
 }
+
+
+@media (max-width:650px){
+  header{
+    .iconsLeft {
+      width: 100%;
+      svg{
+        font-size: .9rem;
+      }
+    }
+    .iconsRight{
+      width: 100%;
+    }
+    h1{
+      font-size: 3rem;
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
+}

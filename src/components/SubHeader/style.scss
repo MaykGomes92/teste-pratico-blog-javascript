@@ -45,3 +45,22 @@
   }
  }
 }
+
+
+@media (max-width: 670px){
+  .sectionBackGround {
+    .descriptionLeft{
+      h1{
+        font-size: 2rem;
+      }
+
+    }
+    .descriptionRight {
+        h2{
+          font-size: 2rem;
+          margin-bottom: 0;
+          margin: auto;
+        }
+    }
+  }
+}

@@ -9,7 +9,7 @@ function Index() {
   const {listaApi} = React.useContext(UsersGlobalContext)
   const [listaUsuarios, setListaUsuarios] = React.useState()
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const {url} = USERS()
     let fetchApi = async () => {
       await listaApi(url, setListaUsuarios)

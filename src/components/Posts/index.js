@@ -20,7 +20,7 @@ function Index() {
 
   const [abrirListaUsuarios, setAbrirListaUsuarios] = React.useState(false)
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const { url } = POSTS()
     let fetchApi = async () => {
       await listaApi(url, setListaPosts)
@@ -28,7 +28,7 @@ function Index() {
     fetchApi()
   }, [])
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const observarSentinela = new IntersectionObserver((evento) => {
       if (evento.some((evento) => evento.isIntersecting)) {
         setCurrentPosts((state) => state + 3)

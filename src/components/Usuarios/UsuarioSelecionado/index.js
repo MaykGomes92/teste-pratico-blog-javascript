@@ -22,7 +22,6 @@ function Index() {
   }
  }, [paramnsUrl])
 
-console.log(perfilUsuario)
  return (
   <>
    {perfilUsuario && (

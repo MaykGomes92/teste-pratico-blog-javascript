@@ -64,3 +64,25 @@
     }
   }
 }
+
+@media (max-width: 550px){
+  .sectionBackGround {
+    
+    .descriptionLeft{
+      h1{
+        font-size: 1.6rem;
+      }
+
+    }
+    .descriptionRight {
+        h2{
+          padding-left: 15px;
+          width: 100%;
+          font-size: 1.5rem;
+          margin-bottom: 0;
+          margin: auto;
+          line-height: normal;
+        }
+    }
+  }
+}

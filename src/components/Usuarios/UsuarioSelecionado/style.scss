@@ -1,13 +1,12 @@
 .containerInfoUsuario {
 display: flex;
+justify-content: space-around;
 align-items: center;
-justify-content: space-between;
-padding: 10px;
  .blocoUmInfoUsuario {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   margin-top: 20px;
   border: 2px solid aqua;
@@ -23,5 +22,26 @@ padding: 10px;
  }
 
  .infoEndereco {
+ }
+}
+
+@media (max-width: 900px){
+ .containerInfoUsuario {
+ flex-direction: column;
+ .blocoUmInfoUsuario{
+  max-width: 100%;
+  width: 100%;
+ }
+ }
+}
+@media (max-width: 900px){
+ .containerInfoUsuario {
+ flex-direction: column;
+
+  .blocoUmInfoUsuario {
+   img{
+    width: 100px;
+   }
+  }
  }
 }

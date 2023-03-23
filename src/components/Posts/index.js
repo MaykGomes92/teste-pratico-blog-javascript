@@ -26,7 +26,7 @@ function Index() {
       await listaApi(url, setListaPosts)
     }
     fetchApi()
-  }, [])
+  }, [listaApi])
 
   React.useEffect(() => {
     const observarSentinela = new IntersectionObserver((evento) => {
@@ -41,7 +41,7 @@ function Index() {
       }))
     }
     return () => observarSentinela.disconnect();
-  }, [currentPosts])
+  }, [listaPosts,currentPosts])
 
   return (
     <section className='sectionPosts'>

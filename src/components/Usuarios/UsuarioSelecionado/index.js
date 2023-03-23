@@ -20,7 +20,7 @@ function Index() {
    }
    fetchApi()
   }
- }, [paramnsUrl])
+ }, [paramnsUrl,listaApi])
 
  return (
   <>

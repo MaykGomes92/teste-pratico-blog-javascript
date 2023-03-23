@@ -15,7 +15,7 @@ function Index() {
       await listaApi(url, setListaUsuarios)
     }
     fetchApi()
-  },[])
+  },[listaApi])
 
 
   return (

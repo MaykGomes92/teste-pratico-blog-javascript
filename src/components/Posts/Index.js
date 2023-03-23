@@ -54,7 +54,7 @@ function Index() {
                   <h1>{item.title}</h1>
                   <p>{item.body}</p>
                   <img src={imagePost} alt='Imagem do post' />
-                  <button>Ver Mais</button>
+                  <button>Ver Maiss</button>
                 </div>
               </li>
             ))

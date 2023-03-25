@@ -7,7 +7,7 @@ Clone este repositório, então o abra com um editor de texto, em seguida abra o
 Link: https://teste-pratico-blog-javascript.vercel.app/
 
 ## Tecnologias Utilizadas
-
+* React
 * Biblioteca de animação Framer-Motion
 * Scroll-infinito
 * Biblioteca React-icons
